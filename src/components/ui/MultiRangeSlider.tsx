@@ -7,7 +7,7 @@ import {
   useRef,
 } from "react";
 import classnames from "classnames";
-import styles from "./multiRangeSlider.module.css";
+import styles from "./MultiRangeSlider.module.css";
 import { currencyFormatter } from "@/utils/format";
 
 interface MultiRangeSliderProps {
