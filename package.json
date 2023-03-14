@@ -12,14 +12,18 @@
     "fmt": "prettier --write ."
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.13",
+    "@heroicons/react": "^2.0.16",
     "@types/node": "18.15.0",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
+    "classnames": "^2.3.2",
     "deck.gl": "^8.9.0",
     "next": "^13.2.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-map-gl": "^7.0.21",
+    "swr": "^2.1.0",
     "typescript": "4.9.5"
   },
   "devDependencies": {
