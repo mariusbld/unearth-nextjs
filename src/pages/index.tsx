@@ -1,4 +1,6 @@
 import MultiRangeSlider from "@/components/ui/MultiRangeSlider";
+import SelectMenu from "@/components/ui/SelectMenu";
+import { currencyFormatter } from "@/utils/format";
 import { PickingInfo } from "@deck.gl/core/typed";
 import { GeoJsonLayer } from "@deck.gl/layers/typed";
 import DeckGL from "@deck.gl/react/typed";
@@ -7,11 +9,11 @@ import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
 import Map from "react-map-gl";
 import useSWR from "swr";
-import { currencyFormatter } from "@/utils/format";
-import SelectMenu from "@/components/ui/SelectMenu";
-import { EyeIcon } from "@heroicons/react/24/outline";
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
+
+const JOE_HOME_GEOJSON_URL =
+  "https://storage.googleapis.com/geo-files/joe_home_us_value.geojson";
 
 const INITIAL_VIEW_STATE = {
   longitude: -96.93821288851717,
@@ -27,11 +29,11 @@ interface range {
 }
 
 export default function Home() {
-  const { data, error } = useSWR("/api/joe_home_us_value", fetcher);
-  const [dataRange, setDataRange] = useState<range>({ min: 0, max: 100 });
+  const { data, error } = useSWR(JOE_HOME_GEOJSON_URL, fetcher);
+  const [dataRange, setDataRange] = useState<range>({ min: 0, max: 1_000_000 });
   const [selectedRange, setSelectedRange] = useState<range>({
     min: 0,
-    max: 100,
+    max: 1_000_000,
   });
 
   useEffect(() => {
