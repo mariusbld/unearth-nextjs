@@ -12,6 +12,7 @@
     "fmt": "prettier --write ."
   },
   "dependencies": {
+    "@google-cloud/storage": "^6.9.4",
     "@headlessui/react": "^1.7.13",
     "@heroicons/react": "^2.0.16",
     "@types/node": "18.15.0",
